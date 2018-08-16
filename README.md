@@ -1,8 +1,8 @@
 # Assessment: I don't have time for this
 
 Imagine that you've been working on this program on a team of developers. You've
-done all the right things up until now, including writing [doctests]()[1] and
-[unitests](tests/test_anagrams.py).
+done all the right things up until now, including writing [doctests](https://docs.python.org/2.7/library/doctest.html)[1] 
+and [unitests](tests/test_anagrams.py).
 
 Unfortunately, a previous teammate not only committed code that made the
 benchmarking tests fail, but they force pushed to master after rewriting
@@ -26,8 +26,7 @@ suggest that you try and get the `test_short` to pass first, then remove the
 Good luck!
 
 
-```console
-foo@bar:~ $ python2 -m doctest -v anagrams.py words.txt 
-```
-
 [1] You can run the doctests with the following command:
+```console
+foo@bar:~ $ python2 -m doctest -v anagrams.py words/short.txt
+```
