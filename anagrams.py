@@ -7,7 +7,6 @@
 
 """
 import sys
-import time
 
 
 def alphabetize(string):
