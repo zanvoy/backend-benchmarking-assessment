@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 """ anagrams
     Command line interface that accepts a word file and returns a dictionary of
     anagrams for that file.
@@ -6,6 +8,8 @@
     for an arbitrary list of strings.
 
 """
+__author__ = "???"
+
 import sys
 
 
