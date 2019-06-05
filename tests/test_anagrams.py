@@ -20,11 +20,11 @@ class TestAnagrams(unittest.TestCase):
             self.long = handle.read().split()
 
     def test_short(self):
-        """ Test that find_anagrams runs in 1/1000 of a second or faster. """
+        """ Test that find_anagrams runs in 5/1000 of a second or faster. """
         time = Timer(lambda: find_anagrams(self.short)).timeit(number=1)
         self.assertTrue(round(time, 3) <= 0.005,
                         "find_anagrams ran in {}, which exceeds the "
-                        "threshhold of 0.001 seconds".format(round(time, 3)))
+                        "threshhold of 0.005 seconds".format(round(time, 3)))
 
     @unittest.skip("Remove this line once short test passes")
     def test_long(self):
