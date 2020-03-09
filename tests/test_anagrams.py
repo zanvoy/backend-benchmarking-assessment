@@ -31,7 +31,7 @@ class TestAnagrams(unittest.TestCase):
         """ Test find_anagrams with long word list. """
         with open("words/long.txt") as f:
             long_list = f.read().split()
-        self.run_find_anagrams(long_list, 0.010)
+        self.run_find_anagrams(long_list, 0.10)
 
 
 if __name__ == '__main__':
