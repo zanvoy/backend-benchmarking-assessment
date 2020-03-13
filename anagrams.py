@@ -8,51 +8,30 @@
     for an arbitrary list of strings.
 
 """
-__author__ = "???"
+__author__ = "michael gabbard"
 
 import sys
 
 
 def alphabetize(string):
-    """ alphabetize
-        Given a string, return a string that includes the same letters in
-        alphabetical order.
-
-        Example:
-
-        >>> print alphabetize('cab')
-        abc
-
-    """
     return "".join(sorted(string.lower()))
 
 
 def find_anagrams(words):
-    """ find_anagrams
-
-        Return a dictionary with keys that are alphabetized words and values
-        that are all words that, when alphabetized, match the key.
-
-        Example:
-
-        >>> print find_anagrams(['cat', 'dog', 'act'])
-        {'dgo': ['dog'], 'act': ['cat', 'act']}
-
-    """
-    anagrams = {
-        alphabetize(word): [
-            w for w in words
-            if alphabetize(w) == alphabetize(word)]
-        for word in words}
+    anagrams = {}
+    for word in words:
+        if alphabetize(word) not in anagrams:
+            anagrams[word] = [alphabetize(word)]
+        else:
+            anagrams[alphabetize(word)].append(word)
     return anagrams
 
 
 if __name__ == "__main__":
-    # run find anagrams of first argument
     if len(sys.argv) < 2:
-        print "Please specify a word file!"
+        print("Please specify a word file!")
         sys.exit(1)
     else:
         with open(sys.argv[1], 'r') as handle:
             words = handle.read().split()
-            print find_anagrams(words)
+            print(find_anagrams(words))
